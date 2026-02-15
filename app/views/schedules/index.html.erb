@@ -1,0 +1,37 @@
+<h1>Schedules</h1>
+<p>予定の合計数：<%= @schedules.count %></p>
+<p>本日：<%= Time.zone.today.strftime("%Y/%m/%d") %></p>
+<table>
+ <thead>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>All day</th>
+    <th>Updated at</th>
+    <th colspan="2"></th>
+  </tr>
+</thead>
+
+  <tbody>
+    <% @schedules.each do |schedule| %>
+      <tr>
+          <td><%= schedule.id %></td>
+          <td><%= schedule.title %></td>
+          <td><%= schedule.start_date&.strftime("%Y/%m/%d") %></td>
+          <td><%= schedule.end_date&.strftime("%Y/%m/%d") %></td>
+          <td><%= schedule.all_day ? "○" : "" %></td>
+          <td><%= schedule.updated_at.in_time_zone("Asia/Tokyo").strftime("%Y/%m/%d %H:%M") %></td>
+
+          <td><%= link_to "Show", schedule %></td>
+          <td><%= link_to "Edit", edit_schedule_path(schedule) %></td>
+
+          <td>
+             <%= link_to "Destroy", schedule, data: { turbo_confirm: "予定を削除しますか？" }, method: :delete %>
+          </td>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
