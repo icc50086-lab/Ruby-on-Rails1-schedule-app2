@@ -1,5 +1,10 @@
 <h1>スケジュール一覧</h1>
-<%= link_to "新規作成", new_schedule_path %>
+
+<p>
+  <%= link_to "新規作成", new_schedule_path, class: "btn btn-primary" %>
+</p>
+
+
 <p>予定の合計数：<%= @schedules.count %></p>
 <p>本日：<%= Time.zone.today.strftime("%Y/%m/%d") %></p>
 <table>
