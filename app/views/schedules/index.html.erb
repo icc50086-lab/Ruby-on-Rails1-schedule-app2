@@ -1,4 +1,3 @@
-Rendered schedules/index.html.erb
 <h1>スケジュール一覧</h1>
 
 <p>
@@ -37,10 +36,12 @@ Rendered schedules/index.html.erb
           <td><%= link_to "Edit", edit_schedule_path(schedule) %></td>
 
          <td>
-          <%= button_to "Destroy",
-              schedule_path(schedule),
-              method: :delete,
-              data: { confirm: "予定を削除しますか？" } %>
+         <%= link_to "Destroy",
+             schedule_path(schedule),
+             method: :delete,
+             data: { confirm: "予定を削除しますか？" } %>
+
+
          </td>
 
 
