@@ -24,6 +24,15 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+  <% if notice %>
+    <p><%= notice %></p>
+  <% end %>
+
+  <% if alert %>
+    <p><%= alert %></p>
+  <% end %>
+
+  <%= yield %>
+</body>
+
 </html>

@@ -27,9 +27,7 @@
           <td><%= schedule.title %></td>
           <td><%= schedule.start_date&.strftime("%Y/%m/%d") %></td>
           <td><%= schedule.end_date&.strftime("%Y/%m/%d") %></td>
-          <td>
-          <%= schedule.all_day ? "○" : "" %>
-          </td>
+          <td><%= schedule.all_day ? "○" : "" %></td>
           <td><%= schedule.updated_at.in_time_zone("Asia/Tokyo").strftime("%Y/%m/%d %H:%M") %></td>
 
           <td><%= link_to "Show", schedule %></td>
